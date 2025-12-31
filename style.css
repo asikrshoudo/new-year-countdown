@@ -1,0 +1,138 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap');
+
+* { box-sizing: border-box; }
+
+html,body {
+  height: 100%;
+  margin: 0;
+  background: radial-gradient(circle at 30% 20%, #1b0030 0%, #000000 70%);
+  font-family: 'Fredoka One', cursive, sans-serif;
+  color: #fff;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+canvas {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.container {
+  position: relative;
+  z-index: 10;
+  height: 100vh;
+  display: flex;
+  gap: 1.2rem;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 2rem;
+}
+
+/* Year balloon with last-digit swap */
+.balloon-year {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16vw;
+  line-height: 1;
+  user-select: none;
+  -webkit-user-select: none;
+  text-shadow:
+    3px 3px 0 rgba(179,0,71,0.9),
+    8px 8px 30px rgba(0,0,0,0.6);
+  background: linear-gradient(135deg,#ff9fb0 0%,#ff0066 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  filter: drop-shadow(0 12px 18px rgba(0,0,0,0.35));
+  overflow: visible;
+}
+
+/* static part (first digits) */
+.static {
+  display: inline-block;
+  transform-origin: center;
+}
+
+/* digit box for last digit swap */
+.digit-box {
+  position: relative;
+  display: inline-block;
+  width: 0.6em;
+  height: 1em;
+  overflow: hidden;
+  vertical-align: top;
+  margin-left: 0.02em;
+}
+
+.number {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  transition: transform 900ms cubic-bezier(.2,.9,.2,1), opacity 900ms ease;
+  font-weight: 700;
+}
+
+/* initial positions */
+.old { transform: translateY(0); opacity: 1; }
+.new { transform: translateY(100%); opacity: 0; }
+
+/* when swap triggered */
+.swap-now .old { transform: translateY(-150%); opacity: 0; transform-origin: center; }
+.swap-now .new { transform: translateY(0); opacity: 1; }
+
+/* countdown */
+#countdown {
+  margin-top: 0.6rem;
+  font-size: 6.5vw;
+  padding: 10px 36px;
+  border-radius: 999px;
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.08);
+  box-shadow: 0 8px 30px rgba(255,0,120,0.08), inset 0 -6px 20px rgba(0,0,0,0.25);
+  backdrop-filter: blur(6px);
+}
+
+/* wish message */
+#wishMessage {
+  margin-top: 1.2rem;
+  font-size: 5vw;
+  color: #ffd700;
+  text-shadow: 0 0 18px #ffb347;
+  opacity: 0;
+  transform: scale(0.7);
+  transition: transform 700ms ease, opacity 700ms ease;
+}
+.show-message { opacity: 1; transform: scale(1); }
+
+/* Easter egg hidden */
+footer {
+  position: fixed;
+  right: 14px;
+  bottom: 10px;
+  font-family: monospace;
+  color: rgba(255,255,255,0.7);
+  display: none;
+  z-index: 20;
+  background: rgba(0,0,0,0.25);
+  padding: 6px 10px;
+  border-radius: 8px;
+  border: 1px solid rgba(255,255,255,0.04);
+}
+footer span { color: #ff4d88; font-weight: 700; }
+
+/* responsive tweaks */
+@media (min-width: 900px) {
+  .balloon-year { font-size: 12vw; }
+  #countdown { font-size: 4.5vw; padding: 12px 48px; }
+  #wishMessage { font-size: 3.2vw; }
+}
