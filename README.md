@@ -1,30 +1,34 @@
 # 🎉 New Year Countdown
 
-This project is a small passion build to celebrate the arrival of the New Year.  
-It shows a live countdown to midnight on January 1st, and when the clock strikes 12, the site comes alive with fireworks, snowfall, and a smooth year‑digit animation (2025 → 2026).  
-
-I wanted something playful and festive that feels like a digital celebration — so I mixed together HTML, CSS, and JavaScript to make it happen.
+A festive web app that celebrates the arrival of the New Year with a live countdown, fireworks, snowfall, and a smooth year‑digit animation.  
+This project was built to bring joy and a little digital celebration as the clock strikes midnight.
 
 ---
 
-## ✨ What it does
-- **Countdown Timer**: counts down to January 1st at midnight.
-- **Year Animation**: the last digit scrolls up and the new digit slides in.
-- **Fireworks**: a colorful show that runs for 60 seconds starting exactly at midnight.
-- **Snowfall**: light, subtle snowflakes that respond to device tilt.
-- **Easter Egg**: press `Ctrl + Shift + D` to reveal a hidden footer credit.
+## ✨ Features
+- ⏳ **Countdown Timer** — counts down to January 1st at midnight.
+- 🔢 **Year Digit Animation** — last digit scrolls up (e.g. 2025 → 2026).
+- 🎆 **Fireworks Show** — runs for 60 seconds starting exactly at midnight.
+- ❄️ **Snowfall Effect** — light, subtle snowflakes that respond to device tilt.
+- 🥳 **Hidden Easter Egg** — press `Ctrl + Shift + D` to reveal a footer credit.
 
 ---
 
-## 📂 Files
-- `index.html` → the main page structure
-- `style.css` → all the styling and animations
-- `script.js` → countdown logic, fireworks, and snow
+## 📂 Project Structure
+
+index.html       # Main HTML file style.css        # Styling and animations script.js        # Countdown, fireworks, and snow logic screenshot.png   # Demo screenshot for README README.md        # Project description
+
+
 
 ---
 
-## 🚀 How to run
-1. Clone this repository:
+## 📸 Screenshot
+![New Year Countdown Screenshot](screenshot.png)
+
+---
+
+## 🚀 Getting Started
+1. Clone the repository:
    ```bash
    git clone https://github.com/asikrshoudo/new-year-countdown.git
 
